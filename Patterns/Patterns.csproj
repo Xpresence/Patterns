@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Hero.cs" />
+    <Compile Include="HeroMemento.cs" />
+    <Compile Include="HeroStats.cs" />
+    <Compile Include="IMemento.cs" />
+    <Compile Include="Memento.cs" />
+    <Compile Include="Patterns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

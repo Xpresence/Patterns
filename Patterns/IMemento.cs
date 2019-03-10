@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Patterns
 {
-    class Program
+    interface IMemento
     {
-        static void Main(string[] args)
-        {
-        }
+        Memento SaveState();
+        void RestoreState(Memento memento);
     }
 }
