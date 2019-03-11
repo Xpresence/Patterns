@@ -43,11 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hero.cs" />
-    <Compile Include="HeroMemento.cs" />
-    <Compile Include="HeroStats.cs" />
-    <Compile Include="IMemento.cs" />
-    <Compile Include="Memento.cs" />
+    <Compile Include="BaseClasses\Hero.cs" />
+    <Compile Include="Memento\HeroMemento.cs" />
+    <Compile Include="BaseClasses\HeroStats.cs" />
+    <Compile Include="Memento\IMemento.cs" />
+    <Compile Include="Memento\Memento.cs" />
+    <Compile Include="Observer\GameUI.cs" />
+    <Compile Include="Observer\HeroObservable.cs" />
+    <Compile Include="Observer\IObservable.cs" />
+    <Compile Include="Observer\IObserver.cs" />
     <Compile Include="Patterns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

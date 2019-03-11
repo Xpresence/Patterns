@@ -54,7 +54,7 @@ namespace Patterns
             Console.WriteLine($"Интеллект: {Stats.Intelligence}");
         }
 
-        void ChangeStats()
+        protected virtual void ChangeStats()
         {
             Random random = new Random();
 
