@@ -19,6 +19,7 @@ namespace Patterns
             Console.WriteLine("1 -- Memento");
             Console.WriteLine("2 -- Observer");
             Console.WriteLine("3 -- Prototype");
+            Console.WriteLine("4 -- Singleton");
 
             var input = Console.ReadLine();
             switch (input)
@@ -31,6 +32,9 @@ namespace Patterns
                     break;
                 case "3":
                     RunPrototype();
+                    break;
+                case "4":
+                    RunSingleton();
                     break;
 
                 default:
@@ -158,6 +162,24 @@ namespace Patterns
 
             Console.WriteLine("Клон героя:");
             protoHero.AboutHero();
+
+            Console.WriteLine("");
+            Console.WriteLine("Нажмите любую кнопку...");
+            Console.ReadKey();
+        }
+
+        static void RunSingleton()
+        {
+
+            Singleton.HeroSingleton hero = Singleton.HeroSingleton.GetInstance();
+
+            Console.WriteLine("");
+            Console.WriteLine("Начало игры.");
+            Console.WriteLine("");
+
+            hero.FindItem();
+
+            hero = Singleton.HeroSingleton.GetInstance();
 
             Console.WriteLine("");
             Console.WriteLine("Нажмите любую кнопку...");
