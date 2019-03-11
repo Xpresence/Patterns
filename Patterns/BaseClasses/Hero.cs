@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patterns
 {
+    [Serializable]
     class Hero
     {
         public HeroStats Stats { get; set; }

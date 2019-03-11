@@ -18,6 +18,7 @@ namespace Patterns
             Console.WriteLine("Выберите паттерн:");
             Console.WriteLine("1 -- Memento");
             Console.WriteLine("2 -- Observer");
+            Console.WriteLine("3 -- Prototype");
 
             var input = Console.ReadLine();
             switch (input)
@@ -27,6 +28,9 @@ namespace Patterns
                     break;
                 case "2":
                     RunObserver();
+                    break;
+                case "3":
+                    RunPrototype();
                     break;
 
                 default:
@@ -109,6 +113,51 @@ namespace Patterns
             Console.WriteLine("");
 
             hero.FindItem();
+
+            Console.WriteLine("");
+            Console.WriteLine("Нажмите любую кнопку...");
+            Console.ReadKey();
+        }
+
+        static void RunPrototype()
+        {
+
+            Hero hero = new Hero();
+
+            Console.WriteLine("");
+            Console.WriteLine("Начало игры.");
+            Console.WriteLine("");
+
+            hero.FindItem();
+
+            Console.WriteLine("");
+
+            var protoHero = Prototype.Prototype.DeepClone(hero);
+
+            hero.FindItem();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Первый герой атакует:");
+
+            hero.Attack();
+            hero.Attack();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Клон героя атакует:");
+
+            protoHero.Attack();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Первый герой:");
+            hero.AboutHero();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Клон героя:");
+            protoHero.AboutHero();
 
             Console.WriteLine("");
             Console.WriteLine("Нажмите любую кнопку...");

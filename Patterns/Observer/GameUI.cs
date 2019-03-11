@@ -18,10 +18,10 @@ namespace Patterns.Observer
             hero = observable;
             hero.Register(this);
         }
+
         public abstract void UpdateInfo(object obj);
-
-
     }
+
     class GameUILives : GameUI
     {
         public override string Name { get; set; }

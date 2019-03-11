@@ -12,7 +12,7 @@ namespace Patterns.Memento
 
         public Memento (HeroStats stats)
         {
-            this.Stats = stats.Clone();
+            this.Stats = Prototype.Prototype.DeepClone(stats);
         }
     }
 

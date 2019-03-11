@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patterns
 {
+    [Serializable]
     class HeroStats
     {
         public int Lives { get; set; }
@@ -13,17 +14,5 @@ namespace Patterns
         public int Strength { get; set; }
         public int Agility { get; set; }
         public int Intelligence { get; set; }
-
-        public HeroStats Clone()
-        {
-            return new HeroStats()
-            {
-                Lives = this.Lives,
-                Damage = this.Damage,
-                Strength = this.Strength,
-                Agility = this.Agility,
-                Intelligence = this.Intelligence
-            };
-        }
     }
 }
