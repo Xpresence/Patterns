@@ -7,22 +7,10 @@ using System.Threading.Tasks;
 namespace Patterns
 {
     [Serializable]
-    class Hero
+    class Hero : AbstractHero
     {
-        public HeroStats Stats { get; set; }
-        public Hero()
-        {
-            Stats = new HeroStats()
-            {
-                Lives = 100,
-                Damage = 10,
-                Strength = 10,
-                Agility = 10,
-                Intelligence = 10
-            };
-        }
 
-        public void Attack()
+        public override void Attack()
         {
             Random random = new Random();
 
@@ -37,7 +25,7 @@ namespace Patterns
             }
         }
 
-        public void FindItem()
+        public override void FindItem()
         {
             Console.WriteLine("Найдена вещь. Характеристики изменены.");
             ChangeStats();
@@ -46,7 +34,7 @@ namespace Patterns
             AboutHero();
         }
 
-        public void AboutHero()
+        public override void AboutHero()
         {
             Console.WriteLine($"Количество жизней: {Stats.Lives}");
             Console.WriteLine($"Урон: {Stats.Damage}");
@@ -55,7 +43,19 @@ namespace Patterns
             Console.WriteLine($"Интеллект: {Stats.Intelligence}");
         }
 
-        protected virtual void ChangeStats()
+        public override void Buff(int val)
+        {
+            Console.WriteLine($"Урон увеличен на значение: {val}");
+            Stats.Damage += val;
+        }
+
+        public override void Debuff(int val)
+        {
+            Console.WriteLine($"Урон снижен на значение: {val}");
+            Stats.Damage -= val;
+        }
+
+        protected override void ChangeStats()
         {
             Random random = new Random();
 

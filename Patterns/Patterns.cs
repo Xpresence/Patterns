@@ -20,6 +20,7 @@ namespace Patterns
             Console.WriteLine("2 -- Observer");
             Console.WriteLine("3 -- Prototype");
             Console.WriteLine("4 -- Singleton");
+            Console.WriteLine("5 -- Decorator");
 
             var input = Console.ReadLine();
             switch (input)
@@ -35,6 +36,9 @@ namespace Patterns
                     break;
                 case "4":
                     RunSingleton();
+                    break;
+                case "5":
+                    RunDecorator();
                     break;
 
                 default:
@@ -180,6 +184,41 @@ namespace Patterns
             hero.FindItem();
 
             hero = Singleton.HeroSingleton.GetInstance();
+
+            Console.WriteLine("");
+            Console.WriteLine("Нажмите любую кнопку...");
+            Console.ReadKey();
+        }
+
+        static void RunDecorator()
+        {
+            Hero hero = new Hero();
+
+            Console.WriteLine("");
+            Console.WriteLine("Начало игры.");
+            Console.WriteLine("");
+
+            hero = new Decorator.HeroDecoratorBuff(hero);
+
+            hero.Buff(5);
+
+            Console.WriteLine("");
+
+            hero.AboutHero();
+
+            Console.WriteLine("");
+
+            hero.Debuff(3);
+
+            Console.WriteLine("");
+
+            hero = new Decorator.HeroDecoratorDebuff(hero);
+
+            hero.Debuff(1);
+
+            Console.WriteLine("");
+
+            hero.AboutHero();
 
             Console.WriteLine("");
             Console.WriteLine("Нажмите любую кнопку...");

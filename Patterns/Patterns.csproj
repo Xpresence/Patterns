@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\AbstractHero.cs" />
     <Compile Include="BaseClasses\Hero.cs" />
+    <Compile Include="BaseClasses\IHero.cs" />
+    <Compile Include="Decorator\HeroDecorator.cs" />
+    <Compile Include="Decorator\HeroDecoratorBuff.cs" />
+    <Compile Include="Decorator\HeroDecoratorDebuff.cs" />
     <Compile Include="Memento\HeroMemento.cs" />
     <Compile Include="BaseClasses\HeroStats.cs" />
     <Compile Include="Memento\IMemento.cs" />
