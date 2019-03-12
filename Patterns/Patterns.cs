@@ -21,6 +21,7 @@ namespace Patterns
             Console.WriteLine("3 -- Prototype");
             Console.WriteLine("4 -- Singleton");
             Console.WriteLine("5 -- Decorator");
+            Console.WriteLine("6 -- Bridge");
 
             var input = Console.ReadLine();
             switch (input)
@@ -39,6 +40,9 @@ namespace Patterns
                     break;
                 case "5":
                     RunDecorator();
+                    break;
+                case "6":
+                    RunBridge();
                     break;
 
                 default:
@@ -219,6 +223,32 @@ namespace Patterns
             Console.WriteLine("");
 
             hero.AboutHero();
+
+            Console.WriteLine("");
+            Console.WriteLine("Нажмите любую кнопку...");
+            Console.ReadKey();
+        }
+
+        static void RunBridge()
+        {
+
+            Bridge.HeroBridge hero = new Bridge.HeroBridge(new Bridge.ImplementorMove());
+
+            Console.WriteLine("");
+            Console.WriteLine("Начало игры.");
+            Console.WriteLine("");
+
+            hero.Move();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Меняем передвижение.");
+
+            hero.Implementor = new Bridge.ImplementorFly();
+
+            Console.WriteLine("");
+
+            hero.Move();
 
             Console.WriteLine("");
             Console.WriteLine("Нажмите любую кнопку...");

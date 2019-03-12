@@ -9,7 +9,6 @@ namespace Patterns
     [Serializable]
     class Hero : AbstractHero
     {
-
         public override void Attack()
         {
             Random random = new Random();
