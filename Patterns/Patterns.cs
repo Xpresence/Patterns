@@ -22,6 +22,7 @@ namespace Patterns
             Console.WriteLine("4 -- Singleton");
             Console.WriteLine("5 -- Decorator");
             Console.WriteLine("6 -- Bridge");
+            Console.WriteLine("7 -- Factory Method");
 
             var input = Console.ReadLine();
             switch (input)
@@ -43,6 +44,9 @@ namespace Patterns
                     break;
                 case "6":
                     RunBridge();
+                    break;
+                case "7":
+                    RunFactoryMethod();
                     break;
 
                 default:
@@ -249,6 +253,48 @@ namespace Patterns
             Console.WriteLine("");
 
             hero.Move();
+
+            Console.WriteLine("");
+            Console.WriteLine("Нажмите любую кнопку...");
+            Console.ReadKey();
+        }
+
+        static void RunFactoryMethod()
+        {
+
+            FactoryMethod.Creator creator = new FactoryMethod.HeroCreator();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Создаем героя.");
+            AbstractHero hero = creator.FactoryMethod(); 
+
+            hero.AboutHero();
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Создаем героя с сохранением.");
+
+            creator = new FactoryMethod.HeroMementoCreator();
+
+            AbstractHero heroMemento = creator.FactoryMethod();
+
+            Memento.Caretaker savedHero = new Memento.Caretaker();
+
+            savedHero.Memento = (heroMemento as Memento.HeroMemento).SaveState();
+
+            Console.WriteLine("");
+
+            heroMemento.FindItem();
+
+            Console.WriteLine("");
+            Console.WriteLine("Восстанавливаем сохраненного героя:");
+
+            (heroMemento as Memento.HeroMemento).RestoreState(savedHero.Memento);
+
+            Console.WriteLine("");
+            Console.WriteLine("Текущие параметры:");
+            heroMemento.AboutHero();
 
             Console.WriteLine("");
             Console.WriteLine("Нажмите любую кнопку...");
