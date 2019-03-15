@@ -61,6 +61,13 @@
     <Compile Include="BaseClasses\HeroStats.cs" />
     <Compile Include="Memento\IMemento.cs" />
     <Compile Include="Memento\Memento.cs" />
+    <Compile Include="Methods\RunBridge.cs" />
+    <Compile Include="Methods\RunDecorator.cs" />
+    <Compile Include="Methods\RunFactoryMethod.cs" />
+    <Compile Include="Methods\RunMemento.cs" />
+    <Compile Include="Methods\RunObserver.cs" />
+    <Compile Include="Methods\RunPrototype.cs" />
+    <Compile Include="Methods\RunSingleton.cs" />
     <Compile Include="Observer\GameUI.cs" />
     <Compile Include="Observer\HeroObservable.cs" />
     <Compile Include="Observer\IObservable.cs" />

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Patterns.Methods;
+
 namespace Patterns
 {
     class Patterns
@@ -28,25 +30,25 @@ namespace Patterns
             switch (input)
             {
                 case "1":
-                    RunMemento();
+                    RunMemento.Run();
                     break;
                 case "2":
-                    RunObserver();
+                    RunObserver.Run();
                     break;
                 case "3":
-                    RunPrototype();
+                    RunPrototype.Run();
                     break;
                 case "4":
-                    RunSingleton();
+                    RunSingleton.Run();
                     break;
                 case "5":
-                    RunDecorator();
+                    RunDecorator.Run();
                     break;
                 case "6":
-                    RunBridge();
+                    RunBridge.Run();
                     break;
                 case "7":
-                    RunFactoryMethod();
+                    RunFactoryMethod.Run();
                     break;
 
                 default:
@@ -54,251 +56,6 @@ namespace Patterns
                     ChangePatterns();
                     break;
             }
-        }
-
-        static void RunMemento()
-        {
-            Memento.HeroMemento hero = new Memento.HeroMemento();
-
-            Memento.Caretaker savedHero = new Memento.Caretaker();
-
-            Console.WriteLine("");
-            Console.WriteLine("Начало игры.");
-            Console.WriteLine("");
-
-            hero.AboutHero();
-
-            Console.WriteLine("");
-
-            hero.Attack();
-            hero.Attack();
-            hero.Attack();
-
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-
-            hero.Attack();
-            hero.Attack();
-
-            Console.WriteLine("");
-
-            savedHero.Memento = hero.SaveState();
-
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-
-            hero.Attack();
-            hero.Attack();
-
-            Console.WriteLine("");
-
-            hero.RestoreState(savedHero.Memento);
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
-
-        static void RunObserver()
-        {
-
-            Observer.HeroObservable hero = new Observer.HeroObservable();
-
-            Observer.GameUI livesSubscriber = new Observer.GameUILives(hero);
-            Observer.GameUI damageSubscriber = new Observer.GameUIDamage(hero);
-            Observer.GameUI strengthSubscriber = new Observer.GameUIStrength(hero);
-            Observer.GameUI agilitySubscriber = new Observer.GameUIAgility(hero);
-            Observer.GameUI intelligenceSubscriber = new Observer.GameUIIntelligence(hero);
-
-            Console.WriteLine("");
-            Console.WriteLine("Начало игры.");
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
-
-        static void RunPrototype()
-        {
-
-            Hero hero = new Hero();
-
-            Console.WriteLine("");
-            Console.WriteLine("Начало игры.");
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-
-            var protoHero = Prototype.Prototype.DeepClone(hero);
-
-            hero.FindItem();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Первый герой атакует:");
-
-            hero.Attack();
-            hero.Attack();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Клон героя атакует:");
-
-            protoHero.Attack();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Первый герой:");
-            hero.AboutHero();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Клон героя:");
-            protoHero.AboutHero();
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
-
-        static void RunSingleton()
-        {
-
-            Singleton.HeroSingleton hero = Singleton.HeroSingleton.GetInstance();
-
-            Console.WriteLine("");
-            Console.WriteLine("Начало игры.");
-            Console.WriteLine("");
-
-            hero.FindItem();
-
-            hero = Singleton.HeroSingleton.GetInstance();
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
-
-        static void RunDecorator()
-        {
-            Hero hero = new Hero();
-
-            Console.WriteLine("");
-            Console.WriteLine("Начало игры.");
-            Console.WriteLine("");
-
-            hero = new Decorator.HeroDecoratorBuff(hero);
-
-            hero.Buff(5);
-
-            Console.WriteLine("");
-
-            hero.AboutHero();
-
-            Console.WriteLine("");
-
-            hero.Debuff(3);
-
-            Console.WriteLine("");
-
-            hero = new Decorator.HeroDecoratorDebuff(hero);
-
-            hero.Debuff(1);
-
-            Console.WriteLine("");
-
-            hero.AboutHero();
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
-
-        static void RunBridge()
-        {
-
-            Bridge.HeroBridge hero = new Bridge.HeroBridge(new Bridge.ImplementorMove());
-
-            Console.WriteLine("");
-            Console.WriteLine("Начало игры.");
-            Console.WriteLine("");
-
-            hero.Move();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Меняем передвижение.");
-
-            hero.Implementor = new Bridge.ImplementorFly();
-
-            Console.WriteLine("");
-
-            hero.Move();
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
-
-        static void RunFactoryMethod()
-        {
-
-            FactoryMethod.Creator creator = new FactoryMethod.HeroCreator();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Создаем героя.");
-            AbstractHero hero = creator.FactoryMethod(); 
-
-            hero.AboutHero();
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Создаем героя с сохранением.");
-
-            creator = new FactoryMethod.HeroMementoCreator();
-
-            AbstractHero heroMemento = creator.FactoryMethod();
-
-            Memento.Caretaker savedHero = new Memento.Caretaker();
-
-            savedHero.Memento = (heroMemento as Memento.HeroMemento).SaveState();
-
-            Console.WriteLine("");
-
-            heroMemento.FindItem();
-
-            Console.WriteLine("");
-            Console.WriteLine("Восстанавливаем сохраненного героя:");
-
-            (heroMemento as Memento.HeroMemento).RestoreState(savedHero.Memento);
-
-            Console.WriteLine("");
-            Console.WriteLine("Текущие параметры:");
-            heroMemento.AboutHero();
-
-            Console.WriteLine("");
-            Console.WriteLine("Нажмите любую кнопку...");
-            Console.ReadKey();
-        }
+        }  
     }
 }
