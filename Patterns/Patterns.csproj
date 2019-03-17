@@ -67,6 +67,7 @@
     <Compile Include="Methods\RunMemento.cs" />
     <Compile Include="Methods\RunObserver.cs" />
     <Compile Include="Methods\RunPrototype.cs" />
+    <Compile Include="Methods\RunProxy.cs" />
     <Compile Include="Methods\RunSingleton.cs" />
     <Compile Include="Observer\GameUI.cs" />
     <Compile Include="Observer\HeroObservable.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Patterns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prototype\Prototype.cs" />
+    <Compile Include="Proxy\HeroProxy.cs" />
     <Compile Include="Singleton\HeroSingleton.cs" />
   </ItemGroup>
   <ItemGroup>

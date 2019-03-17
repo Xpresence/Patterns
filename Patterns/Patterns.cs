@@ -25,6 +25,7 @@ namespace Patterns
             Console.WriteLine("5 -- Decorator");
             Console.WriteLine("6 -- Bridge");
             Console.WriteLine("7 -- Factory Method");
+            Console.WriteLine("8 -- Proxy");
 
             var input = Console.ReadLine();
             switch (input)
@@ -49,6 +50,9 @@ namespace Patterns
                     break;
                 case "7":
                     RunFactoryMethod.Run();
+                    break;
+                case "8":
+                    RunProxy.Run();
                     break;
 
                 default:
