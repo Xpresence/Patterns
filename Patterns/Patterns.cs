@@ -26,6 +26,7 @@ namespace Patterns
             Console.WriteLine("6 -- Bridge");
             Console.WriteLine("7 -- Factory Method");
             Console.WriteLine("8 -- Proxy");
+            Console.WriteLine("9 -- Command");
 
             var input = Console.ReadLine();
             switch (input)
@@ -53,6 +54,9 @@ namespace Patterns
                     break;
                 case "8":
                     RunProxy.Run();
+                    break;
+                case "9":
+                    RunCommand.Run();
                     break;
 
                 default:

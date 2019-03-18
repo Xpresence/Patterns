@@ -51,6 +51,11 @@
     <Compile Include="Bridge\IImplementor.cs" />
     <Compile Include="Bridge\ImplementorMove.cs" />
     <Compile Include="Bridge\ImplementorFly.cs" />
+    <Compile Include="Command\AttackCommand.cs" />
+    <Compile Include="Command\Command.cs" />
+    <Compile Include="Command\AboutCommand.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\Invoker.cs" />
     <Compile Include="Decorator\HeroDecorator.cs" />
     <Compile Include="Decorator\HeroDecoratorBuff.cs" />
     <Compile Include="Decorator\HeroDecoratorDebuff.cs" />
@@ -62,6 +67,7 @@
     <Compile Include="Memento\IMemento.cs" />
     <Compile Include="Memento\Memento.cs" />
     <Compile Include="Methods\RunBridge.cs" />
+    <Compile Include="Methods\RunCommand.cs" />
     <Compile Include="Methods\RunDecorator.cs" />
     <Compile Include="Methods\RunFactoryMethod.cs" />
     <Compile Include="Methods\RunMemento.cs" />
