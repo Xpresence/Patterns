@@ -75,6 +75,7 @@
     <Compile Include="Methods\RunPrototype.cs" />
     <Compile Include="Methods\RunProxy.cs" />
     <Compile Include="Methods\RunSingleton.cs" />
+    <Compile Include="Methods\RunState.cs" />
     <Compile Include="Observer\GameUI.cs" />
     <Compile Include="Observer\HeroObservable.cs" />
     <Compile Include="Observer\IObservable.cs" />
@@ -84,6 +85,10 @@
     <Compile Include="Prototype\Prototype.cs" />
     <Compile Include="Proxy\HeroProxy.cs" />
     <Compile Include="Singleton\HeroSingleton.cs" />
+    <Compile Include="State\HeroState.cs" />
+    <Compile Include="State\IState.cs" />
+    <Compile Include="State\NormalState.cs" />
+    <Compile Include="State\RageState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
