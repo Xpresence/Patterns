@@ -51,6 +51,10 @@
     <Compile Include="Bridge\IImplementor.cs" />
     <Compile Include="Bridge\ImplementorMove.cs" />
     <Compile Include="Bridge\ImplementorFly.cs" />
+    <Compile Include="ChainOfResponsibility\AttackHandler.cs" />
+    <Compile Include="ChainOfResponsibility\HealHandler.cs" />
+    <Compile Include="ChainOfResponsibility\Handler.cs" />
+    <Compile Include="ChainOfResponsibility\HoldHandler.cs" />
     <Compile Include="Command\AttackCommand.cs" />
     <Compile Include="Command\Command.cs" />
     <Compile Include="Command\AboutCommand.cs" />
@@ -67,6 +71,7 @@
     <Compile Include="Memento\IMemento.cs" />
     <Compile Include="Memento\Memento.cs" />
     <Compile Include="Methods\RunBridge.cs" />
+    <Compile Include="Methods\RunChainOfResponsibility.cs" />
     <Compile Include="Methods\RunCommand.cs" />
     <Compile Include="Methods\RunDecorator.cs" />
     <Compile Include="Methods\RunFactoryMethod.cs" />

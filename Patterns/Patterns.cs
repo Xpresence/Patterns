@@ -28,6 +28,7 @@ namespace Patterns
             Console.WriteLine("8 -- Proxy");
             Console.WriteLine("9 -- Command");
             Console.WriteLine("10 -- State");
+            Console.WriteLine("11 -- Chain of Responsibility");
 
             var input = Console.ReadLine();
             switch (input)
@@ -61,6 +62,9 @@ namespace Patterns
                     break;
                 case "10":
                     RunState.Run();
+                    break;
+                case "11":
+                    RunChainOfResponsibility.Run();
                     break;
 
                 default:
