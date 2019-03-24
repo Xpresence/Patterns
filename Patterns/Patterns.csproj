@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\Client.cs" />
+    <Compile Include="Adapter\Monster.cs" />
+    <Compile Include="Adapter\MonsterToHeroAdapter.cs" />
     <Compile Include="BaseClasses\AbstractHero.cs" />
     <Compile Include="BaseClasses\Hero.cs" />
     <Compile Include="BaseClasses\IHero.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="BaseClasses\HeroStats.cs" />
     <Compile Include="Memento\IMemento.cs" />
     <Compile Include="Memento\Memento.cs" />
+    <Compile Include="Methods\RunAdapter.cs" />
     <Compile Include="Methods\RunBridge.cs" />
     <Compile Include="Methods\RunChainOfResponsibility.cs" />
     <Compile Include="Methods\RunCommand.cs" />

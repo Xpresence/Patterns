@@ -29,6 +29,7 @@ namespace Patterns
             Console.WriteLine("9 -- Command");
             Console.WriteLine("10 -- State");
             Console.WriteLine("11 -- Chain of Responsibility");
+            Console.WriteLine("12 -- Adapter");
 
             var input = Console.ReadLine();
             switch (input)
@@ -65,6 +66,9 @@ namespace Patterns
                     break;
                 case "11":
                     RunChainOfResponsibility.Run();
+                    break;
+                case "12":
+                    RunAdapter.Run();
                     break;
 
                 default:
